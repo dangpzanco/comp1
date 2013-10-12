@@ -29,20 +29,23 @@ int main(int argc, char const *argv[])
 	for (i = 0; i < n/2; i++)
 		for (j = 0; j < n/2; j++)
 		{
-            M[i][n/2 - i] = 1;
-            M[i][n/2 + i] = 1;
             M[i + j][n/2 - i] = 1;
             M[i + j][n/2 + i] = 1;
 		}
 
 //espelha o desenho de cima para baixo, anulando os resíduos do loop 2,
-//também desenha o traçado central (é como um sinal de "-")
+//também desenha o traçado central (é como um grande sinal de "-")
 	for (i = n/2; i < n; i++)
 		for (j = 0; j < n; j++)
 		{
             M[i][j] = M[n - i - 1][j]; // espelho
-            M[n/2][j] = 1; //"-"
+            M[n/2][j] = 1; //"--------------"
 		}
+
+//traçado central (é como um sinal de "-")
+/*	for (i = 0; i < n; i++)
+		for (j = 0; j < n; j++)
+			M[n/2][j] = 1;*/
 
 //exibe a matriz na tela
 	for (i = 0; i < n; i++)
