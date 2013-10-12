@@ -44,11 +44,6 @@ int main(int argc, char const *argv[])
             M[n/2][j] = 1; //"-"
 		}
 
-//traçado central (é como um sinal de "-")
-/*	for (i = 0; i < n; i++)
-		for (j = 0; j < n; j++)
-			M[n/2][j] = 1;*/
-
 //exibe a matriz na tela
 	for (i = 0; i < n; i++)
 	{
