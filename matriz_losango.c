@@ -16,7 +16,7 @@ int main(int argc, char const *argv[])
 {
 	int i, j, n, M[20][20]; // funciona para qualquer M[n][n] com n < int máximo e ímpar
 
-	printf("Matriz quadrada n por n, cujo n e' igual a ");
+	printf("Insira um numero impar n (3 < n < 20) para");
 	scanf("%i", &n);
 	printf("\n");
 
@@ -25,7 +25,7 @@ int main(int argc, char const *argv[])
 		for (j = 0; j < n; ++j)
 			M[i][j] = 0;
 
-// preenche uma piramide na parte superior, deixando resíduos embaixo.
+// preenche uma piramide na parte superior, deixando resíduos (1s) embaixo.
 	for (i = 0; i < n/2; i++)
 		for (j = 0; j < n/2; j++)
 		{
@@ -41,11 +41,6 @@ int main(int argc, char const *argv[])
             M[i][j] = M[n - i - 1][j]; // espelho
             M[n/2][j] = 1; //"--------------"
 		}
-
-//traçado central (é como um sinal de "-")
-/*	for (i = 0; i < n; i++)
-		for (j = 0; j < n; j++)
-			M[n/2][j] = 1;*/
 
 //exibe a matriz na tela
 	for (i = 0; i < n; i++)
@@ -67,7 +62,7 @@ abaixo. Considerações:
 #1 O número de linha e colunas são iguais e deve ser um valor impar(3 ≤ n ≤ 20) a ser fornecido pelo
 usuário em tempo de execução do programa.
 
-#2 Usar exclusivamente arrays e estruturas de repetição. Procure minimize o número de instruções.
+#2 Usar exclusivamente arrays e estruturas de repetição. Procure minimizar o número de instruções.
 
 0 0 1 0 0
 0 1 1 1 0
