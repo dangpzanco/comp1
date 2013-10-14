@@ -16,7 +16,7 @@ int main(int argc, char const *argv[])
 {
 	int i, j, n, M[20][20]; // funciona para qualquer M[n][n] com n < int máximo e ímpar
 
-	printf("Insira um numero impar n (3 < n < 20) para");
+	printf("Insira um numero impar n (3 < n < 20) para formar a figura em uma matriz n por n: ");
 	scanf("%i", &n);
 	printf("\n");
 
