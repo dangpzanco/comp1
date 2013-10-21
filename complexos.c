@@ -1,19 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#define TAMANHO_MAXIMO 100
 #define PI 3.14159265;
 
-double retpol(double [2][2]);
-double soma(double [2][2]);
-double multi(double [2][2]);
-double divisao(double [2][2]);
-double sub(double [2][2]);
 
 int main(int argc, char const *argv[])
 {
-	int n, m, k;
+	int n, m;
 	double N[2][2] = {{0, 0}, {0, 0}};
+	double P[2][2] = {{0, 0}, {0, 0}};
 	double R[2] = {0, 0};
 
 	printf("Deseja trabalhar na forma retangular (1) ou polar (2)?\n");
@@ -72,20 +67,38 @@ int main(int argc, char const *argv[])
 	}
 	else
 	{
+		printf("Considere "a" e "b" em graus.\n");
 		printf("Insira o primeiro numero na forma X = |X|*(cos(a) + i*sin(a))\n");
 		printf("|X| = ");
-		scanf("%lf", &N[0][0]);
+		scanf("%lf", &P[0][0]);
 		printf("\na = ");
-		scanf("%lf", &N[0][1]);
+		scanf("%lf", &P[0][1]);
+
 		printf("\n\nInsira o segundo numero na forma Y = |Y|*(cos(b) + i*sin(b)):\n");
 		printf("|Y| = ");
-		scanf("%lf", &N[1][0]);
+		scanf("%lf", &P[1][0]);
 		printf("\nb = ");
-		scanf("%lf", &N[1][1]);
+		scanf("%lf", &P[1][1]);
+
+		N[0][0] = P[0][0]*cos(P[0][1]*(PI/180));
+		N[0][1] = P[0][0]*sin(P[0][1]*(PI/180));
+		N[1][0] = P[1][0]*cos(P[1][1]*(PI/180));
+		N[1][1] = P[1][0]*sin(P[1][1]*(PI/180));
 
 		switch (m)
 		{
-			case 1:
+			case 1: //soma
+			 	R[0] = N[0][0] + N[1][0];
+				R[1] = N[0][1] + N[1][1];
+				printf("\nA soma X + Y = %lf + (%lf)i\n", R[0], R[1]);
+				break;
+			case 2: //subtracao
+				R[0] = N[0][0] - N[1][0];
+				R[1] = N[0][1] - N[1][1];
+				printf("\nA subtracao X - Y = %lf + (%lf)i\n", R[0], R[1]);
+				break;
+			case 3:
+
 
 		}
 	}
