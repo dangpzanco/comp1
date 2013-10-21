@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#define PI 3.14159265;
 
 
 int main(int argc, char const *argv[])
@@ -67,7 +66,7 @@ int main(int argc, char const *argv[])
 	}
 	else
 	{
-		printf("Considere "a" e "b" em graus.\n");
+		printf("Considere a e b em graus.\n");
 		printf("Insira o primeiro numero na forma X = |X|*(cos(a) + i*sin(a))\n");
 		printf("|X| = ");
 		scanf("%lf", &P[0][0]);
@@ -80,10 +79,10 @@ int main(int argc, char const *argv[])
 		printf("\nb = ");
 		scanf("%lf", &P[1][1]);
 
-		N[0][0] = P[0][0]*cos(P[0][1]*(PI/180));
-		N[0][1] = P[0][0]*sin(P[0][1]*(PI/180));
-		N[1][0] = P[1][0]*cos(P[1][1]*(PI/180));
-		N[1][1] = P[1][0]*sin(P[1][1]*(PI/180));
+		N[0][0] = P[0][0]*cos(P[0][1]*(3.14159265/180));
+		N[0][1] = P[0][0]*sin(P[0][1]*(3.14159265/180));
+		N[1][0] = P[1][0]*cos(P[1][1]*(3.14159265/180));
+		N[1][1] = P[1][0]*sin(P[1][1]*(3.14159265/180));
 
 		switch (m)
 		{
@@ -118,5 +117,4 @@ int main(int argc, char const *argv[])
 	}
 
 	system("pause");
-	return 0;
-}
+	return
