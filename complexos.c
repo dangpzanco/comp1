@@ -97,7 +97,21 @@ int main(int argc, char const *argv[])
 				R[1] = N[0][1] - N[1][1];
 				printf("\nA subtracao X - Y = %lf + (%lf)i\n", R[0], R[1]);
 				break;
-			case 3:
+			case 3: //multiplicacao
+				R[0] = P[0][0]*P[1][0];
+				R[1] = P[0][1] + P[1][1];
+				printf("\nA multiplicacao X*Y = %lf * (cos(%lf) + i*sin(%lf))\n", R[0], R[1]);
+				break;
+			case 4: //divisao X/Y
+				R[0] = P[0][0]/P[1][0];
+				R[1] = P[0][1] - P[1][1];
+				printf("\nA divisao X/Y = %lf * (cos(%lf) + i*sin(%lf))\n", R[0], R[1]);
+				break;
+			case 5: //divisao Y/X
+				R[0] = P[1][0]/P[0][0];
+				R[1] = P[1][1] - P[0][1];
+				printf("\nA divisao Y/X = %lf * (cos(%lf) + i*sin(%lf))\n", R[0], R[1]);
+				break;
 
 
 		}
